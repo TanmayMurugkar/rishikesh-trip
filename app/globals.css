@@ -21,9 +21,8 @@
 }
 
 html {
-  /* Disable smooth scroll — frame sync requires instant response */
-  scroll-behavior: auto;
-  background: #0b0b0b;
+  scroll-behavior: smooth;
+  background: #020b14;
 }
 
 body {
