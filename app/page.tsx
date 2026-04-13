@@ -480,11 +480,16 @@ function RaftHero() {
                 { name: "AABHA", color: "#f472b6" },
                 { name: "TANMAY", color: "#fbbf24" },
               ].map(({ name, color }, i) => (
-                <motion.div
+                <motion.a
                   key={name}
+                  href="#crew"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 + i * 0.1, duration: 0.45 }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("crew")?.scrollIntoView({ behavior: "smooth" });
+                  }}
                   style={{
                     fontFamily: "var(--font-orbitron), Orbitron, monospace",
                     fontSize: "clamp(10px, 1.2vw, 13px)",
@@ -499,10 +504,18 @@ function RaftHero() {
                     boxShadow: `0 0 16px ${color}55, inset 0 0 12px ${color}18`,
                     backdropFilter: "blur(6px)",
                     WebkitBackdropFilter: "blur(6px)",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                    transition: "box-shadow 0.2s ease, transform 0.2s ease",
                   }}
+                  whileHover={{
+                    scale: 1.08,
+                    boxShadow: `0 0 28px ${color}99, inset 0 0 16px ${color}28`,
+                  }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   {name}
-                </motion.div>
+                </motion.a>
               ))}
             </motion.div>
           </motion.div>
@@ -924,6 +937,7 @@ function DayCard({
 function CrewSection() {
   return (
     <section
+      id="crew"
       style={{
         background: "#020b14",
         borderTop: "1px solid rgba(6,182,212,0.08)",
