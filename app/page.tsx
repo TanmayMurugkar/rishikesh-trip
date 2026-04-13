@@ -381,8 +381,8 @@ function RaftHero() {
       <AnimatePresence>
         {textVisible && (
           <motion.div
-            className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
-            style={{ zIndex: 20, paddingTop: "9vh", paddingBottom: "9vh" }}
+            className="absolute inset-0 flex flex-col items-center justify-center"
+            style={{ zIndex: 20, paddingTop: "9vh", paddingBottom: "9vh", pointerEvents: "none" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -488,7 +488,11 @@ function RaftHero() {
                   transition={{ delay: 1 + i * 0.1, duration: 0.45 }}
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById("crew")?.scrollIntoView({ behavior: "smooth" });
+                    const crew = document.getElementById("crew");
+                    if (crew) {
+                      const top = crew.getBoundingClientRect().top + window.pageYOffset;
+                      window.scrollTo({ top, behavior: "smooth" });
+                    }
                   }}
                   style={{
                     fontFamily: "var(--font-orbitron), Orbitron, monospace",
@@ -506,6 +510,7 @@ function RaftHero() {
                     WebkitBackdropFilter: "blur(6px)",
                     cursor: "pointer",
                     textDecoration: "none",
+                    pointerEvents: "auto",
                     transition: "box-shadow 0.2s ease, transform 0.2s ease",
                   }}
                   whileHover={{
@@ -1326,7 +1331,7 @@ function TripFooter() {
 
 export default function RishikeshPage() {
   return (
-    <main style={{ background: "#020b14", overflowX: "hidden" }}>
+    <main style={{ background: "#020b14" }}>
       <RaftHero />
       <ItinerarySection />
       <CrewSection />
