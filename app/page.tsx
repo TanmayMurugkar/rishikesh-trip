@@ -397,10 +397,22 @@ function RaftHero() {
                 alignItems: "center",
                 gap: "0.75rem",
                 marginBottom: "1.6rem",
+                pointerEvents: "auto",
               }}
             >
               <div style={{ width: 28, height: 1, background: "#06b6d4" }} />
-              <span
+              <motion.a
+                href="#itinerary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById("itinerary");
+                  if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({ top, behavior: "smooth" });
+                  }
+                }}
+                whileHover={{ scale: 1.05, boxShadow: "0 0 24px rgba(6,182,212,0.8)" }}
+                whileTap={{ scale: 0.96 }}
                 style={{
                   fontFamily: "var(--font-orbitron), Orbitron, monospace",
                   fontSize: "clamp(11px, 1.3vw, 14px)",
@@ -414,10 +426,13 @@ function RaftHero() {
                   padding: "7px 18px",
                   backdropFilter: "blur(6px)",
                   WebkitBackdropFilter: "blur(6px)",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  pointerEvents: "auto",
                 }}
               >
                 26 APR — 03 MAY · 2026
-              </span>
+              </motion.a>
               <div style={{ width: 28, height: 1, background: "#06b6d4" }} />
             </motion.div>
 
@@ -609,6 +624,7 @@ function HUDCorners() {
 function ItinerarySection() {
   return (
     <section
+      id="itinerary"
       style={{
         background: "#020b14",
         paddingTop: "6rem",
