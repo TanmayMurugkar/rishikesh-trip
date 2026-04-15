@@ -100,8 +100,8 @@ const ITINERARY = [
     emoji: "🪔",
     highlight: "Gita Bhavan & Har Ki Pauri",
     activities: [
-      "Breakfast at Parmarth Niketan — ashram vibes at dawn",
-      "Breakfast again at Gita Bhavan (yes, two breakfasts, no regrets)",
+      "Early morning roam at Parmarth Niketan — ashram vibes at dawn",
+      "Breakfast at Gita Bhavan Mishtahan — the real Pahadi breakfast",
       "Full Haridwar tour — hit all the sacred spots",
       "Sunset at Kyarki — the golden hour that hits different",
       "Dinner at Shivani Café",
