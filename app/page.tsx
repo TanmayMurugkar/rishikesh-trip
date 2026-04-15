@@ -538,6 +538,45 @@ function RaftHero() {
                 </motion.a>
               ))}
             </motion.div>
+
+            {/* Google Photos upload button */}
+            <motion.a
+              href={DRIVE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.5 }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 32px rgba(6,182,212,0.6), 0 0 64px rgba(6,182,212,0.2)",
+              }}
+              whileTap={{ scale: 0.96 }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.6rem",
+                marginTop: "2rem",
+                fontFamily: "var(--font-orbitron), Orbitron, monospace",
+                fontSize: "clamp(9px, 1.1vw, 11px)",
+                fontWeight: 700,
+                letterSpacing: "0.2em",
+                color: "#ffffff",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                background: "rgba(0,0,0,0.6)",
+                border: "1px solid rgba(6,182,212,0.7)",
+                padding: "10px 22px",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+                pointerEvents: "auto",
+                cursor: "pointer",
+                boxShadow: "0 0 16px rgba(6,182,212,0.25)",
+              }}
+            >
+              🖼️ Upload Photos ↗
+            </motion.a>
+
           </motion.div>
         )}
       </AnimatePresence>
