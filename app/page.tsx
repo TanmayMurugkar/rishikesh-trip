@@ -1343,6 +1343,198 @@ function TripFooter() {
   );
 }
 
+// ─── Photo Upload Section ──────────────────────────────────────────────────────
+
+const DRIVE_LINK = "https://drive.google.com/drive/folders/1k83a91AwYDLs3WkH8rm258uD5_JxPcC1?usp=sharing";
+
+function PhotoUploadSection() {
+  return (
+    <section
+      style={{
+        background: "#020b14",
+        borderTop: "1px solid rgba(6,182,212,0.08)",
+        borderBottom: "1px solid rgba(6,182,212,0.08)",
+        padding: "6rem clamp(1.5rem, 5vw, 4rem)",
+        position: "relative",
+        overflow: "hidden",
+        textAlign: "center",
+      }}
+    >
+      {/* Background glow */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(6,182,212,0.05) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* Grid lines */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "linear-gradient(rgba(6,182,212,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.03) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+          pointerEvents: "none",
+        }}
+      />
+
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 700, margin: "0 auto" }}>
+
+        {/* Icon */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: "1.5rem" }}
+        >
+          <div
+            style={{
+              width: 72,
+              height: 72,
+              borderRadius: "50%",
+              border: "1px solid rgba(6,182,212,0.4)",
+              background: "rgba(6,182,212,0.08)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "0 auto",
+              fontSize: 28,
+              boxShadow: "0 0 30px rgba(6,182,212,0.2)",
+            }}
+          >
+            📸
+          </div>
+        </motion.div>
+
+        {/* Label */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "1rem",
+            marginBottom: "1.2rem",
+          }}
+        >
+          <div style={{ width: 40, height: 1, background: "rgba(6,182,212,0.4)" }} />
+          <span
+            style={{
+              fontFamily: "var(--font-rajdhani), Rajdhani, sans-serif",
+              fontSize: 10,
+              letterSpacing: "0.5em",
+              color: "rgba(6,182,212,0.7)",
+              textTransform: "uppercase",
+            }}
+          >
+            Shared Album
+          </span>
+          <div style={{ width: 40, height: 1, background: "rgba(6,182,212,0.4)" }} />
+        </motion.div>
+
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          style={{
+            fontFamily: "var(--font-orbitron), Orbitron, monospace",
+            fontSize: "clamp(24px, 4vw, 44px)",
+            fontWeight: 800,
+            color: "#ffffff",
+            letterSpacing: "-0.01em",
+            marginBottom: "1rem",
+          }}
+        >
+          DROP YOUR SHOTS
+        </motion.h2>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          style={{
+            fontFamily: "var(--font-rajdhani), Rajdhani, sans-serif",
+            fontSize: "clamp(15px, 1.8vw, 18px)",
+            fontWeight: 500,
+            color: "rgba(255,255,255,0.55)",
+            lineHeight: 1.7,
+            marginBottom: "2.5rem",
+          }}
+        >
+          Every rapid, every laugh, every moment — upload your photos & videos
+          to the shared Google Drive. The whole crew can see and download everything.
+        </motion.p>
+
+        {/* Upload button */}
+        <motion.a
+          href={DRIVE_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          whileHover={{
+            scale: 1.04,
+            boxShadow: "0 0 40px rgba(6,182,212,0.5), 0 0 80px rgba(6,182,212,0.2)",
+          }}
+          whileTap={{ scale: 0.97 }}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.75rem",
+            fontFamily: "var(--font-orbitron), Orbitron, monospace",
+            fontSize: "clamp(11px, 1.3vw, 14px)",
+            fontWeight: 700,
+            letterSpacing: "0.2em",
+            color: "#ffffff",
+            textTransform: "uppercase",
+            textDecoration: "none",
+            background: "linear-gradient(135deg, rgba(6,182,212,0.2) 0%, rgba(6,182,212,0.05) 100%)",
+            border: "1px solid rgba(6,182,212,0.7)",
+            padding: "16px 36px",
+            cursor: "pointer",
+            boxShadow: "0 0 20px rgba(6,182,212,0.2)",
+          }}
+        >
+          <span style={{ fontSize: 16 }}>☁️</span>
+          Open Shared Drive
+          <span style={{ opacity: 0.6, fontSize: 12 }}>↗</span>
+        </motion.a>
+
+        {/* Sub note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          style={{
+            fontFamily: "var(--font-rajdhani), Rajdhani, sans-serif",
+            fontSize: 11,
+            letterSpacing: "0.25em",
+            color: "rgba(255,255,255,0.2)",
+            textTransform: "uppercase",
+            marginTop: "1.5rem",
+          }}
+        >
+          Google Drive · Accessible to the whole crew
+        </motion.p>
+      </div>
+    </section>
+  );
+}
+
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 export default function RishikeshPage() {
@@ -1351,6 +1543,7 @@ export default function RishikeshPage() {
       <RaftHero />
       <ItinerarySection />
       <CrewSection />
+      <PhotoUploadSection />
       <TripFooter />
     </main>
   );
