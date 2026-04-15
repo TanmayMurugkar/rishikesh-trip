@@ -1345,7 +1345,7 @@ function TripFooter() {
 
 // ─── Photo Upload Section ──────────────────────────────────────────────────────
 
-const DRIVE_LINK = "https://drive.google.com/drive/folders/1k83a91AwYDLs3WkH8rm258uD5_JxPcC1?usp=sharing";
+const DRIVE_LINK = "https://photos.app.goo.gl/UAjiPJVQNSZ6pmUs6";
 
 function PhotoUploadSection() {
   return (
@@ -1473,7 +1473,7 @@ function PhotoUploadSection() {
           }}
         >
           Every rapid, every laugh, every moment — upload your photos & videos
-          to the shared Google Drive. The whole crew can see and download everything.
+          to the shared Google Photos album. The whole crew can view, download and add.
         </motion.p>
 
         {/* Upload button */}
@@ -1508,8 +1508,8 @@ function PhotoUploadSection() {
             boxShadow: "0 0 20px rgba(6,182,212,0.2)",
           }}
         >
-          <span style={{ fontSize: 16 }}>☁️</span>
-          Open Shared Drive
+          <span style={{ fontSize: 16 }}>🖼️</span>
+          Open Google Photos Album
           <span style={{ opacity: 0.6, fontSize: 12 }}>↗</span>
         </motion.a>
 
@@ -1528,7 +1528,7 @@ function PhotoUploadSection() {
             marginTop: "1.5rem",
           }}
         >
-          Google Drive · Accessible to the whole crew
+          Google Photos · Accessible to the whole crew
         </motion.p>
       </div>
     </section>
