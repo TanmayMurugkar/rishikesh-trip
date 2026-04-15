@@ -574,7 +574,7 @@ function RaftHero() {
                 boxShadow: "0 0 16px rgba(6,182,212,0.25)",
               }}
             >
-              🖼️ Upload Photos ↗
+              🌊 Upload Photos ↗
             </motion.a>
 
           </motion.div>
@@ -1547,7 +1547,7 @@ function PhotoUploadSection() {
             boxShadow: "0 0 20px rgba(6,182,212,0.2)",
           }}
         >
-          <span style={{ fontSize: 16 }}>🖼️</span>
+          <span style={{ fontSize: 16 }}>🌊</span>
           Open Google Photos Album
           <span style={{ opacity: 0.6, fontSize: 12 }}>↗</span>
         </motion.a>
